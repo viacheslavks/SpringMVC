@@ -8,6 +8,4 @@ public interface CarService {
     List<Car> list();
 
     List<Car> show(int count);
-
-
 }

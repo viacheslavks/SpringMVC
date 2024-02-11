@@ -8,6 +8,5 @@ public interface CarDao {
     List<Car> list();
 
     List<Car> show(int count);
-
 }
 

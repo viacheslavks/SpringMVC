@@ -14,6 +14,7 @@ import web.service.CarServiceImp;
 public class CarController {
 
     private final CarServiceImp carServiceImp;
+
     @Autowired
     public CarController(CarServiceImp carServiceImp) {
         this.carServiceImp = carServiceImp;
@@ -25,12 +26,9 @@ public class CarController {
         return "cars/list";
     }
 
-    @GetMapping("/show")
-    public String show(@RequestParam("count") int count, Model model) {
+    @GetMapping(params = "count")
+    public String show(@RequestParam("count") Integer count, Model model) {
         model.addAttribute("cars", carServiceImp.show(count));
         return "cars/show";
     }
-
-
-
 }
